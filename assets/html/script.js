@@ -213,7 +213,12 @@ document.querySelector('#export').addEventListener('click', () => {
         console.log(textFileContent);
         console.log(Module.call_get_C_mat);
 
-        rectangle = [96.5, 142, 93, 114, 256, 156.5, 112, 129, 202, 307, 358, 88, 401.5, 177, 65, 72];
+        // rectangle = [96.5, 142, 93, 114, 256, 156.5, 112, 129, 202, 307, 358, 88, 401.5, 177, 65, 72];
+        //  6.1551   -2.9068   -2.8158   -0.1604   -0.2721
+        // -2.9068    9.4598   -4.0456   -2.3532   -0.1543
+        // -2.8158   -4.0456    9.4078   -1.9552   -0.5911
+        // -0.1604   -2.3532   -1.9552    4.7080   -0.2391
+        // -0.2721   -0.1543   -0.5911   -0.2391    0.6461
         let rect = new Module.VectorDouble();
         rectangle.forEach(val => rect.push_back(val));
         Module.call_get_C_mat(rect);
